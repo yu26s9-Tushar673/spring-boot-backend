@@ -1,0 +1,241 @@
+{
+  "info": {
+    "name": "Internship Platform API",
+    "description": "Week 10 Demo - REST API for Internship Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Internships",
+      "item": [
+        {
+          "name": "Get All Internships",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/internships",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships"]
+            }
+          }
+        },
+        {
+          "name": "Get Internship by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/internships/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Internship (Valid)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Java Developer Intern\",\n  \"company\": \"Tech Corp\",\n  \"description\": \"Work on exciting Spring Boot projects and learn from experienced developers.\",\n  \"location\": \"Amsterdam\",\n  \"published\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/internships",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships"]
+            }
+          }
+        },
+        {
+          "name": "Create Internship (Unpublished)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Data Analyst Intern\",\n  \"company\": \"Data Solutions BV\",\n  \"description\": \"Analyze datasets and create visualizations using Python and Tableau.\",\n  \"location\": \"Rotterdam\",\n  \"published\": false\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/internships",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships"]
+            }
+          }
+        },
+        {
+          "name": "Create Internship (Invalid - Missing Fields)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Frontend Developer\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/internships",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships"]
+            }
+          }
+        },
+        {
+          "name": "Update Internship",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Senior Java Developer Intern\",\n  \"company\": \"Tech Corp\",\n  \"description\": \"Updated description with more responsibilities.\",\n  \"location\": \"Amsterdam\",\n  \"published\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/internships/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Internship",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/internships/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "internships", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Candidates",
+      "item": [
+        {
+          "name": "Get All Candidates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/candidates",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "candidates"]
+            }
+          }
+        },
+        {
+          "name": "Get Candidate by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/candidates/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "candidates", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Candidate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jan de Vries\",\n  \"email\": \"jan.devries@example.com\",\n  \"fieldOfStudy\": \"Computer Science\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/candidates",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "candidates"]
+            }
+          }
+        },
+        {
+          "name": "Update Candidate",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jan de Vries\",\n  \"email\": \"jan.devries.updated@example.com\",\n  \"fieldOfStudy\": \"Software Engineering\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/candidates/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "candidates", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Candidate",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/candidates/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "candidates", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
